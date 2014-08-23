@@ -71,21 +71,46 @@ module.exports = function (grunt) {
                 hostname: 'localhost',
                 livereload: 35729
             },
-            proxies: [
-                {
-                    context: '/api',
-                    host: 'indiegogo.com',
-                    port: 443,
-                    https: true,
-                    changeOrigin: true
-                }
-            ],
+//            proxies: [
+//                {
+//                    context: '/api',
+//                    host: 'indiegogo.com',
+//                    port: 443,
+//                    https: true,
+//                    changeOrigin: true,
+//	                headers: {
+//	                         'scheme': 'https',
+//	                         'host': 'https://www.indiegogo.com',
+//	                         origin: 'https://www.indiegogo.com',
+//	                         pragma: 'no-cache',
+//	                         referer: 'https://www.indiegogo.com',
+//		                     accept: 'application/json',
+//	                         contentLength: 0
+//	                }
+//                }
+//            ],
             livereload: {
                 options: {
                     open: true,
                     middleware: function (connect) {
                         return [
-                            require('grunt-connect-proxy/lib/utils').proxyRequest,
+//                            require('grunt-connect-proxy/lib/utils').proxyRequest,
+	                        require('json-proxy').initialize({
+		                        proxy: {
+			                        forward: {
+				                        '/api/': 'https://indiegogo.com'
+			                        },
+			                        headers: {
+				                        'scheme': 'https',
+				                        'host': 'https://www.indiegogo.com',
+				                        Origin: 'https://www.indiegogo.com',
+				                        pragma: 'no-cache',
+				                        referer: 'https://www.indiegogo.com',
+				                        accept: 'application/json',
+				                        contentLength: 0
+			                        }
+		                        }
+	                        }),
                             connect.static('.tmp'),
                             connect().use(
                                 '/bower_components',
@@ -94,6 +119,23 @@ module.exports = function (grunt) {
                             connect.static(appConfig.app)
                         ];
                     }
+//	                middleware: function(connect, options, middlewares) {
+//		                // inject json-proxy to the front of the default middlewares array
+//		                middlewares.unshift(
+//			                require('json-proxy').initialize({
+//				                proxy: {
+//					                forward: {
+//						                '/api/': 'http://api.example.com:8080'
+//					                },
+//					                headers: {
+//						                'X-Forwarded-User': 'John Doe'
+//					                }
+//				                }
+//			                })
+//		                );
+//
+//		                return middlewares;
+//	                }
                 }
             },
             test: {
@@ -428,7 +470,7 @@ module.exports = function (grunt) {
             'wiredep',
             'concurrent:server',
             'autoprefixer',
-            'configureProxies:server',
+//            'configureProxies:server',
             'connect:livereload',
             'watch'
         ]);

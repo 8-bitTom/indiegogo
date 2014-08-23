@@ -1,0 +1,33 @@
+<div class="col-xs-4">
+    <a ng-href="https://www.indiegogo.com/projects/{{item.slug}}">
+        <div class="card">
+            <div class="row">
+                <image class="col-xs-12" ng-src="{{item.baseball_card_image_url}}"></image>
+                <div class="col-xs-12">
+                    <div class="container">
+                        <div class="cardTitle"><strong>{{item.title}}</strong></div>
+                        <div class="text-muted">{{item.tagline | truncate : 125}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottomCont">
+                <div  class="col-xs-12">
+                    <h4>
+                        <strong>{{item.goal | currency:item.currency.symbol}}</strong> <small class="text-muted">{{item.currency.iso_code}}</small>
+                    </h4>
+                    <div class="pull-left">
+                        <pie-chart pd-config="{percentage: item.collected_funds/item.goal*100, size: 30}"></pie-chart>
+                    </div>
+                    <div class="pull-left pieOffset">
+                        <strong>&nbsp;{{item.collected_funds/item.goal*100 | number: 0}}%</strong>
+                    </div>
+
+                    <div class="pull-right pieOffset">
+                        <strong>{{item.funding_ends_at | timeUntill}}</strong>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </a>
+</div>

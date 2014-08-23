@@ -12,8 +12,46 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 /* Space out content a bit */
 body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.nav{
+  margin-top:35px;
+}
+
+.card{
+  border: 1px solid grey;
+  margin: 10px 0px;
+  font-size: 14px;
+  line-height: 20px;
+  height: 520px;
+  position: relative;
+
+  .cardTitle{
+    height: 40px;
+    margin-bottom: 2px;
+    color: #000 !important;
+    :hover{
+      color: #eb1478;
+    }
+  }
+  .container{
+    padding: 10px;
+    width: 100%;
+  }
+  .bottomCont{
+    position: absolute;
+    bottom: 0px;
+    background: #000;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+
+    .pieOffset{
+      padding-top: 5px;
+    }
+  }
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -27,14 +65,8 @@ body {
 /* Custom page header */
 .header {
   border-bottom: 1px solid #e5e5e5;
-
-  /* Make the masthead heading the same height as the navigation */
-  h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
-  }
+  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 /* Custom page footer */
@@ -44,49 +76,11 @@ body {
   border-top: 1px solid #e5e5e5;
 }
 
-.container-narrow > hr {
-  margin: 30px 0;
+.content {
+  width: 976px;
+  margin: auto;
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-  }
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-
-  p + h4 {
-    margin-top: 28px;
-  }
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
+li h4{
+  display: inline;
 }

@@ -31,6 +31,10 @@ npm install`
 ```
 
 ```Bash
+bower install`
+```
+
+```Bash
 grunt serve
 ```
 
