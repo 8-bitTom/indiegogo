@@ -41,7 +41,7 @@ grunt serve
 Running Tests with Karma and Jade
 ---------------------------------
 
-Only Started writing the tests so far. Most of the default ones fail when you run them. Maybe I'll get some time this weekend to flesh them out. (Tests are currently configured to use chrome)
+A few very basic unit tests. (Tests are currently configured to run via chrome)
 
 ```Bash
 grunt test
