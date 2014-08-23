@@ -14,7 +14,7 @@ angular.module( 'iggApp' )
 			//Let's Calculate the time left before the Campaign ends!
 			var now = new Date();
 			var then = new Date( input );
-			var timeLeft, days, hours, minutes;
+			var timeLeft;
 
 			var minute = 1000 * 60;
 			var hour = minute * 60;

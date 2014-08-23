@@ -11,11 +11,7 @@
 angular
   .module('iggApp', [
     'ngAnimate',
-    'ngCookies',
-    'ngResource',
     'ngRoute',
-    'ngSanitize',
-    'ngTouch',
 	'pieDirective'
   ])
   .config(function ($routeProvider) {
