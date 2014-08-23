@@ -11,9 +11,19 @@ describe('Filter: timeUntill', function () {
     timeUntill = $filter('timeUntill');
   }));
 
-  it('should return the Time Untill Input"', function () {
-    var tomorrow = new Date(new Date().getTime() + 24 * 60 * 60 * 1000)
-    expect(timeUntill(tomorrow)).toBe('1 days left');
+  it('should return 2 days left"', function () {
+    var tomorrow = new Date(new Date().getTime() + 49 * 60 * 60 * 1000)
+    expect(timeUntill(tomorrow)).toBe('2 days left');
   });
+
+	it('should return 1 hours"', function () {
+		var tomorrow = new Date(new Date().getTime() + 61 * 60 * 1000)
+		expect(timeUntill(tomorrow)).toBe('1 hours');
+	});
+
+	it('should return 4 minutes"', function () {
+		var tomorrow = new Date(new Date().getTime() + 4 * 60 * 1000)
+		expect(timeUntill(tomorrow)).toBe('4 minutes');
+	});
 
 });
