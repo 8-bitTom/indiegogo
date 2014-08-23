@@ -38,10 +38,14 @@ bower install`
 grunt serve
 ```
 
-Running Tests with Karma
-------------------------
+Running Tests with Karma and Jade
+---------------------------------
 
-ToDo
+Only Started writing the tests so far. Most of the default ones fail when you run them. Maybe I'll get some time this weekend to flesh them out. (Tests are currently configured to use chrome)
+
+```Bash
+grunt test
+```
 
 
 
