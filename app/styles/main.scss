@@ -20,6 +20,51 @@ body {
   margin-top:35px;
 }
 
+//same animations for our cards pretty standard from Angular's examples but nice looking none-the-less
+//I'm pretty sure there's a compass mix-in for the vendor prefix stuff as well as block declarations for the comma delimited items, but I need to read the Api again
+.fader.ng-enter, .fader.ng-move {
+  -webkit-transition:0.5s linear all;
+  -moz-transition:0.5s linear all;
+  -o-transition:0.5s linear all;
+  transition:0.5s linear all;
+  opacity:0;
+}
+
+.fader.ng-enter.ng-enter-active,
+.fader.ng-move.ng-move-active {
+  opacity:1;
+}
+
+.fader.ng-leave {
+  -webkit-animation:0.5s my_animation;
+  -moz-animation:0.5s my_animation;
+  -o-animation:0.5s my_animation;
+  animation:0.5s my_animation;
+}
+@keyframes my_animation {
+  from { opacity:1; }
+  to { opacity:0; }
+}
+
+/*
+  Unfortunately each browser vendor requires
+  its own definition of keyframe animation code...
+*/
+@-webkit-keyframes my_animation {
+  from { opacity:1; }
+  to { opacity:0; }
+}
+
+@-moz-keyframes my_animation {
+  from { opacity:1; }
+  to { opacity:0; }
+}
+
+@-o-keyframes my_animation {
+  from { opacity:1; }
+  to { opacity:0; }
+}
+
 .card{
   border: 1px solid grey;
   margin: 10px 0px;
